@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário de tarefas</title>
 </head>
 <body>
-    <p>TODO: FORMULÁRIO</p>
+    <form th:action="@{/criarTarefa}" th:method="POST">
+        <label for="descricao">Descrição:</label>
+        <input type="text" th:name="descricao" /> 
+        <br>
+
+        <label for="data">Data:</label>
+        <input type="text" th:name="data" /> 
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>

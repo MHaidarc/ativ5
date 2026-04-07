@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 @Controller
 public class Atividade5Controller {
@@ -34,5 +37,17 @@ public class Atividade5Controller {
         return "tarefas.html";
     }
 
-    //TODO: POSTMAPPING DAORINHA
+    @GetMapping("/formularioTarefas")
+    public String formularioTarefas() {
+        return "formularioTarefas.html";
+    }
+    
+
+    @PostMapping("/criarTarefa")
+    public String criar(@RequestParam String descricao, @RequestParam String data, Model model) {
+        
+        tarefas.add(new Tarefa(descricao, data));
+        return "redirect:/listarTarefas";
+    }
+    
 }
