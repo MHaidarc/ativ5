@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+</head>
+<body>
+    <ul th:each="tarefa : ${tarefas}">
+        <li th:text="${tarefa.descricao}"></li>
+        <li th:text="${tarefa.data}"></li>
+    </ul>
+
+    <a href="formularioTarefas">Formulário de Tarefas</a>
+</body>
+</html>
