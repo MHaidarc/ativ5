@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar personagens</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="personagem : ${personagens}">
+                <td th:text="${personagem.nome}"> </td>
+                <td th:text="${personagem.idade}"> </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
