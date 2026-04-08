@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
 @Controller
 public class Atividade5Controller {
     
@@ -42,12 +40,35 @@ public class Atividade5Controller {
         return "formularioTarefas.html";
     }
     
-
     @PostMapping("/criarTarefa")
     public String criar(@RequestParam String descricao, @RequestParam String data, Model model) {
-        
+
         tarefas.add(new Tarefa(descricao, data));
+
         return "redirect:/listarTarefas";
+    }
+
+    public List<Filme> filmes = new ArrayList<Filme>();
+
+    @GetMapping("/formularioFilme")
+    public String formularioFilme() {
+        return "formulario-filme.html";
+    }
+    
+    @PostMapping("/cadastrarFilme")
+    public String cadastrarFilme(@RequestParam String titulo, @RequestParam String genero, @RequestParam int ano) {
+
+        filmes.add(new Filme(titulo, genero, ano));
+
+        return "redirect:/filmes";
+    }
+
+    @GetMapping("filmes")
+    public String filmes(Model model) {
+
+        model.addAttribute("filmes", filmes);
+
+        return "filmes.html";
     }
     
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Filme</title>
+</head>
+<body>
+    <form th:action="@{/cadastrarFilme}" th:method="POST">
+        <label for="titulo">Título:</label>
+        <input type="text" th:name="titulo" /> 
+        <br>
+
+        <label for="genero">Gênero:</label>
+        <input type="text" th:name="genero" /> 
+        <br>
+
+        <label for="ano">Ano de lançamento:</label>
+        <input type="number" th:name="ano" /> 
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

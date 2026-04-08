@@ -4,8 +4,6 @@ public class Personagem {
     private String nome;
     private int idade;
 
-
-    
     public Personagem() {
     }
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Gênero</th>
+                <th>Ano</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="filme : ${filmes}">
+                <td th:text="${filme.titulo}"> </td>
+                <td th:text="${filme.genero}"> </td>
+                <td th:text="${filme.ano}"> </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/formularioFilme">Formulário de cadastro de filmes</a>
+</body>
+</html>
